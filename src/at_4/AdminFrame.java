@@ -43,13 +43,6 @@ public class AdminFrame extends javax.swing.JFrame {
         LogoutButton = new javax.swing.JButton();
         RemoveButton = new javax.swing.JButton();
         UpdateButton = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        Logout = new javax.swing.JMenu();
-        Update = new javax.swing.JMenu();
-        Remove = new javax.swing.JMenu();
-        Add = new javax.swing.JMenu();
 
         jMenu1.setText("File");
         jMenuBar2.add(jMenu1);
@@ -112,64 +105,35 @@ public class AdminFrame extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("NOTE TO ADMIN: MENU BAR BUTTONS NOT WORKING, USE BUTTONS ON THE LEFT.");
-
-        jLabel2.setText("WILL FIX LATER. THANKS FOR UNDERSTANDING.");
-
-        Logout.setText("Logout");
-        jMenuBar1.add(Logout);
-
-        Update.setText("Update");
-        jMenuBar1.add(Update);
-
-        Remove.setText("Remove");
-        jMenuBar1.add(Remove);
-
-        Add.setText("Add");
-        jMenuBar1.add(Add);
-
-        setJMenuBar(jMenuBar1);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jDesktopPane1)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(65, 65, 65)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(LogoutButton)
+                    .addComponent(AddButton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(LogoutButton)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(RemoveButton)
-                            .addComponent(UpdateButton))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(AddButton)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 461, Short.MAX_VALUE)))
-                .addContainerGap())
+                    .addComponent(UpdateButton, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(RemoveButton, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(66, 66, 66))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LogoutButton)
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(AddButton)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(RemoveButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(UpdateButton)
-                .addGap(0, 120, Short.MAX_VALUE))
+                    .addComponent(RemoveButton))
+                .addGap(48, 48, 48)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(UpdateButton)
+                    .addComponent(AddButton))
+                .addGap(73, 73, 73))
         );
 
         pack();
@@ -232,23 +196,16 @@ public class AdminFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu Add;
     private javax.swing.JButton AddButton;
-    private javax.swing.JMenu Logout;
     private javax.swing.JButton LogoutButton;
-    private javax.swing.JMenu Remove;
     private javax.swing.JButton RemoveButton;
-    private javax.swing.JMenu Update;
     private javax.swing.JButton UpdateButton;
     private javax.swing.JDesktopPane jDesktopPane1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuBar jMenuBar3;
     private javax.swing.JMenuItem jMenuItem1;

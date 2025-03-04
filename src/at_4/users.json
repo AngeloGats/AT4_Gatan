@@ -1,8 +1,19 @@
 {
-    "users":[
-                {"username":"user1","password":"password123", "type" : "admin"
-                },
-                {"username":"user2","password":"password321", "type" : "member" 
-                }
-            ]
+    "users": [{
+            "password": "Admin123",
+            "type": "Admin",
+            "username": "Admin"
+        }, {
+            "password": "password321",
+            "type": "Student",
+            "username": "user2"
+        }, {
+            "password": "test",
+            "type": "Admin",
+            "username": "test"
+        }, {
+            "password": "student",
+            "type": "Student",
+            "username": "student"
+        }]
 }

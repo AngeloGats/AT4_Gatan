@@ -27,7 +27,7 @@ public class GatanLogin extends javax.swing.JFrame {
      */
  
     private static String username, password, type; // Declaration of variables to store username, password, and type of role in the system.
-    private static String filepath ="D:\\jsonfiles\\users.json" ; // Path to JSON file data.
+    private static String filepath ="C:\\Users\\Angelo Gatan\\Documents\\NetBeansProjects\\AT_4\\src\\at_4\\users.json" ; // Path to JSON file data.
     private static JSONParser jsonParser = new JSONParser(); // JSON Parser of file data
     private static JSONObject record = new JSONObject(); // To hole parsed data.
     private static JSONArray userlist = new JSONArray(); // To hold list of users and their data.
@@ -58,6 +58,7 @@ public class GatanLogin extends javax.swing.JFrame {
         ClearButton1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -92,20 +93,20 @@ public class GatanLogin extends javax.swing.JFrame {
         });
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel3.setText("University of Lakeview Admin System");
+        jLabel3.setText("University of Lakeview Management System");
 
         jLabel4.setText("(BAREBONE PROTOTYPE,  DEMONSTRATION TO SCHOOL ADMIN PURPOSES ONLY.)");
+
+        jLabel6.setText("[INSERT LOGO HERE]");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel3)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(59, 59, 59)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -119,21 +120,27 @@ public class GatanLogin extends javax.swing.JFrame {
                 .addGap(38, 38, 38))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 487, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 487, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(10, 10, 10)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
+                .addContainerGap()
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(21, 21, 21)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(UsNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel6))
+                .addGap(24, 24, 24)
                 .addComponent(PassTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -149,8 +156,8 @@ public class GatanLogin extends javax.swing.JFrame {
 
     private void LoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginButtonActionPerformed
         try {
-            username = UsNameTextField.getText(); // Prevents window from being resized
-            password = PassTextField.getText(); // Prevents window from being resized
+            username = UsNameTextField.getText(); // Get username from text field.
+            password = PassTextField.getText(); // Get password from text field.
 
             filecheck(); // Checks if file exists.           
             int check = 0;
@@ -169,9 +176,13 @@ public class GatanLogin extends javax.swing.JFrame {
             }
 
             if (check == 1) { // If match is detected, select base on type.
-                if ("admin".equals(foundtype)) {
+                if ("Admin".equals(foundtype)) {
                     AdminFrame x = new AdminFrame();
                     x.setVisible(true);
+                    setVisible(false);
+                } else if ("Student".equals(foundtype)) {
+                    StudentFrame y = new StudentFrame();
+                    y.setVisible(true);
                     setVisible(false);
                 }
             } else {
@@ -269,5 +280,6 @@ public class GatanLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
     // End of variables declaration//GEN-END:variables
 }
